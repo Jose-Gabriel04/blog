@@ -32,7 +32,7 @@ group :test do
   gem 'database_cleaner-active_record', '~> 2.2'
   gem 'fuubar', '~> 2.5', '>= 2.5.1'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
-  gem 'shoulda-matchers', '~> 6.2'
+  gem 'shoulda-matchers'
   gem 'simplecov', '~> 0.22.0', require: false
   gem 'simplecov-console', '~> 0.9.4', require: false
 end

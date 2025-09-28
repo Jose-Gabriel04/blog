@@ -15,7 +15,7 @@ Bundler.require(*Rails.groups)
 #
 # config.time_zone = "Central Time (US & Canada)"
 # config.eager_load_paths << Rails.root.join("extras")
-class Blog::Application < Rails::Application
+class Application < Rails::Application
   # Initialize configuration defaults for originally generated Rails version.
   config.load_defaults 8.0
 
