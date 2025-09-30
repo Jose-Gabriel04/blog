@@ -33,7 +33,7 @@ Style/ClassAndModuleChildren:
 
 RSpec/ContextWording:
   Prefixes:
-    - quando
+    - when
 
 RSpec/NestedGroups:
   Max: 5
