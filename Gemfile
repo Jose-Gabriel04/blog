@@ -15,7 +15,7 @@ group :development, :test do
   gem 'faker', '~> 3.5', '>= 3.5.2'
   gem 'fasterer', '~> 0.11.0'
   gem 'html2haml', '~> 2.3'
-  gem 'rspec-rails', '~> 6.1', '>= 6.1.2'
+  gem 'rspec-rails', '~> 8.0'
 end
 
 group :development do
