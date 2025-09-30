@@ -10,7 +10,7 @@ gem 'rails', '~> 8.0.3'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
-  gem 'byebug', '~> 11.1', '>= 11.1.3'
+  gem 'byebug', '~> 12.0'
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
   gem 'faker', '~> 3.5', '>= 3.5.2'
   gem 'fasterer', '~> 0.11.0'
