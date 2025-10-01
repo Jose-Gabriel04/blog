@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_27_180545) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_01_154346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -21,6 +21,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_27_180545) do
     t.string "ip", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "average_rating", default: 0.0, null: false
+    t.integer "ratings_count", default: 0, null: false
     t.index ["ip"], name: "index_posts_on_ip"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

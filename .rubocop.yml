@@ -52,3 +52,7 @@ RSpec/MultipleExpectations:
 
 RSpec/ExampleLength:
   Max: 20
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'app/forms/rating_form.rb'

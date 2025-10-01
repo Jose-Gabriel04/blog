@@ -2,13 +2,25 @@
 
 require 'rails_helper'
 
-RSpec.describe Post, type: :model do
+RSpec.describe Post do
+  let(:object) { described_class.new }
+
   describe 'database' do
     it { is_expected.to have_db_column(:user_id).of_type(:integer).with_options(null: false) }
 
     it { is_expected.to have_db_column(:title).of_type(:string).with_options(null: false) }
     it { is_expected.to have_db_column(:body).of_type(:text).with_options(null: false) }
     it { is_expected.to have_db_column(:ip).of_type(:string).with_options(null: false) }
+
+    it do
+      expect(object).to have_db_column(:average_rating).of_type(:float)
+                    .with_options(null: false, default: 0.0)
+    end
+
+    it do
+      expect(object).to have_db_column(:ratings_count).of_type(:integer)
+                    .with_options(null: false, default: 0)
+    end
 
     it { is_expected.to have_db_column(:created_at).of_type(:datetime).with_options(null: false) }
     it { is_expected.to have_db_column(:updated_at).of_type(:datetime).with_options(null: false) }

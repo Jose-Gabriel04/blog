@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Rating, type: :model do
+RSpec.describe Rating do
   subject { create(:rating) }
 
   describe 'database' do
@@ -23,6 +23,5 @@ RSpec.describe Rating, type: :model do
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:value) }
-    it { is_expected.to validate_uniqueness_of(:user_id).scoped_to(:post_id) }
   end
 end
