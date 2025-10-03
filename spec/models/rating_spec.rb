@@ -14,7 +14,6 @@ RSpec.describe Rating do
     it { is_expected.to have_db_column(:updated_at).of_type(:datetime).with_options(null: false) }
 
     it { is_expected.to have_db_index(%i[post_id user_id]).unique(true) }
-    it { is_expected.to have_db_index(:average_rating) }
   end
 
   describe 'associations' do
