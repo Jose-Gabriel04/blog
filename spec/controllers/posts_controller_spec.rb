@@ -29,4 +29,49 @@ RSpec.describe PostsController do
       end
     end
   end
+
+  describe 'GET #top' do
+    let(:parsed_response) do
+      [{ 'average_rating' => 5.0, 'body' => 'test_post_1', 'id' => 100 },
+       { 'average_rating' => 4.5, 'body' => 'test_post_2', 'id' => 101 }]
+    end
+
+    before do
+      create(:post, id: 100, body: 'test_post_1', average_rating: 5.0)
+      create(:post, id: 101, body: 'test_post_2', average_rating: 4.5)
+      create(:post, id: 102, body: 'test_post_3', average_rating: 4.0)
+    end
+
+    it 'get top N posts by average rating' do
+      get :top, params: { limit: 2 }
+
+      expect(response).to have_http_status(:ok)
+      expect(response.parsed_body).to eq(parsed_response)
+    end
+  end
+
+  describe 'GET #shared_ips' do
+    let(:user_one) { create(:user, login: 'user_one') }
+    let(:user_two) { create(:user, login: 'user_two') }
+    let(:user_three) { create(:user, login: 'user_three') }
+    let(:parsed_response) do
+      [{ 'authors' => %w[user_one user_two], 'ip' => '127.0.0.0' },
+       { 'authors' => %w[user_one user_three], 'ip' => '127.0.0.1' }]
+    end
+
+    before do
+      create(:post, user: user_one, ip: '127.0.0.0')
+      create(:post, user: user_two, ip: '127.0.0.0')
+      create(:post, user: user_one, ip: '127.0.0.1')
+      create(:post, user: user_three, ip: '127.0.0.1')
+      create(:post, user: user_two, ip: '127.0.0.2')
+    end
+
+    it 'Get a list of IPs that were posted by several different authors' do
+      get :shared_ips
+
+      expect(response).to have_http_status(:ok)
+      expect(response.parsed_body).to eq(parsed_response)
+    end
+  end
 end

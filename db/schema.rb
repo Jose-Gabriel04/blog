@@ -23,6 +23,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_01_154346) do
     t.datetime "updated_at", null: false
     t.float "average_rating", default: 0.0, null: false
     t.integer "ratings_count", default: 0, null: false
+    t.index ["average_rating"], name: "index_posts_on_average_rating", order: :desc
     t.index ["ip"], name: "index_posts_on_ip"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
