@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class RatingsController < ApplicationController
+class RatingsController < ActionController::API
+  wrap_parameters false
+
   def create
     form = RatingForm.new(attributes: rating_params)
 

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class PostsController < ApplicationController
+class PostsController < ActionController::API
+  wrap_parameters false
+
   def create
     form = PostForm.new(attributes: post_params)
 

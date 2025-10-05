@@ -4,12 +4,13 @@ default: &default
   username: postgres
   password: postgres
   host: localhost
-  pool: 5
 
 development:
   <<: *default
   database: blog_development
+  pool: 25
 
 test:
   <<: *default
   database: blog_test
+  pool: 25
