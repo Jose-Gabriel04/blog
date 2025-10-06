@@ -28,7 +28,6 @@ Make sure you have the following installed:
 
 4. **Clone the project repository:**
   git clone git@github.com:Jose-Gabriel04/blog.git
-  cd blog
 
 5. **Install Ruby using RVM:**
   rvm install ruby-3.4.6
